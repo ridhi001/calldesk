@@ -1,0 +1,59 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: calldesk
+  datasource:
+    url: jdbc:h2:file:./data/calldesk;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+calldesk:
+  public-base-url: ${PUBLIC_BASE_URL:http://localhost:8080}
+  business-profile: ${BUSINESS_PROFILE:classpath:business/demo-clinic.yaml}
+  providers:
+    stt: ${STT_PROVIDER:mock}
+    llm: ${LLM_PROVIDER:mock}
+    tts: ${TTS_PROVIDER:mock}
+  cartesia:
+    api-key: ${CARTESIA_API_KEY:}
+    stt-model: ${CARTESIA_STT_MODEL:ink-whisper}
+    tts-model: ${CARTESIA_TTS_MODEL:sonic-2}
+    voice-id: ${CARTESIA_VOICE_ID:}
+    version: ${CARTESIA_VERSION:2025-04-16}
+  openrouter:
+    api-key: ${OPENROUTER_API_KEY:}
+    model: ${OPENROUTER_MODEL:openai/gpt-4o-mini}
+    base-url: ${OPENROUTER_BASE_URL:https://openrouter.ai/api/v1}
+  twilio:
+    account-sid: ${TWILIO_ACCOUNT_SID:}
+    auth-token: ${TWILIO_AUTH_TOKEN:}
+    validate-signature: ${TWILIO_VALIDATE_SIGNATURE:false}
+  vad:
+    energy-threshold: ${VAD_ENERGY_THRESHOLD:700}
+    speech-start-ms: ${VAD_SPEECH_START_MS:60}
+    speech-end-ms: ${VAD_SPEECH_END_MS:500}
+  silence:
+    reprompt-after-ms: ${SILENCE_REPROMPT_AFTER_MS:8000}
+    hangup-after-ms: ${SILENCE_HANGUP_AFTER_MS:20000}
+  eager-reply:
+    enabled: ${EAGER_REPLY_ENABLED:true}
+    stable-partial-ms: ${EAGER_REPLY_STABLE_PARTIAL_MS:250}
+  knowledge:
+    min-score: ${KNOWLEDGE_MIN_SCORE:2.2}
+  mock:
+    stt-delay-ms: ${MOCK_STT_DELAY_MS:0}
+    llm-token-delay-ms: ${MOCK_LLM_TOKEN_DELAY_MS:20}
+    tts-first-chunk-delay-ms: ${MOCK_TTS_FIRST_CHUNK_DELAY_MS:80}

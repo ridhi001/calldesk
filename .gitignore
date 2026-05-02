@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+target/
+**/target/
+calldesk-data.mv.db
+calldesk-data.trace.db
+*.mv.db
+*.trace.db
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Local H2 database
+backend/data/
+backend/calldesk-data*
