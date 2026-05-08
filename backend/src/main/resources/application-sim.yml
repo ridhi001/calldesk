@@ -1,0 +1,9 @@
+calldesk:
+  providers:
+    stt: mock
+    llm: mock
+    tts: mock
+  mock:
+    stt-delay-ms: 0
+    llm-token-delay-ms: 1
+    tts-first-chunk-delay-ms: 5

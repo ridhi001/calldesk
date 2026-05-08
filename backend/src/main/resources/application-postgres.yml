@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/calldesk}
+    username: ${DATABASE_USERNAME:calldesk}
+    password: ${DATABASE_PASSWORD:calldesk}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update

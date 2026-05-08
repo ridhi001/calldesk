@@ -1,0 +1,46 @@
+# Business profile for the demo. Point BUSINESS_PROFILE at your own copy to make CallDesk yours.
+# `faqs` seed the knowledge base on first start only (when it is empty); after that, manage entries
+# from the dashboard's Knowledge base page or the /api/knowledge endpoints.
+name: Brightsmile Dental
+greeting: Thanks for calling Brightsmile Dental, this is the virtual receptionist. How can I help?
+hours: Monday to Friday 9 am to 7 pm, Saturday 9 am to 1 pm, closed on Sunday
+address: 14 Park Street, Bhubaneswar 751001
+# Where "talk to a person" transfers go. E.164 format, as Twilio expects.
+handoffNumber: "+916745550142"
+faqs:
+  - question: What are your opening hours?
+    answer: We're open Monday to Friday from 9 am to 7 pm and Saturday from 9 am to 1 pm. We're closed on Sundays.
+    tags: [hours, timings, open, close, weekend]
+  - question: Where is the clinic located?
+    answer: We're at 14 Park Street, Bhubaneswar, next to the Park Street metro exit. There's free parking behind the building.
+    tags: [location, address, directions, parking]
+  - question: How do I book an appointment?
+    answer: I can book you in right now. Tell me the day and time that suits you and I'll check what's free.
+    tags: [booking, appointment, schedule]
+  - question: Do you offer teeth whitening?
+    answer: Yes. We offer in-clinic whitening in about an hour, and take-home kits. A dentist checks your teeth first to pick the right option.
+    tags: [treatments, whitening, cosmetic]
+  - question: How much does a cleaning cost?
+    answer: A regular cleaning and check-up is 1,200 rupees. Deep cleaning starts at 2,500 rupees and depends on what the dentist finds.
+    tags: [pricing, price, cost, cleaning, checkup]
+  - question: Do you take insurance?
+    answer: We accept most major health insurers, including Star Health and HDFC ERGO. Bring your policy card and we'll handle the claim.
+    tags: [insurance, billing, claim]
+  - question: What should I do in a dental emergency?
+    answer: Call us straight away. We keep same-day emergency slots. Outside opening hours, go to the emergency ward at AMRI Hospital.
+    tags: [emergency, urgent, pain, toothache]
+  - question: Can I reschedule or cancel my appointment?
+    answer: Yes, just tell me your name and appointment time. Please give us 24 hours' notice so we can offer the slot to someone else.
+    tags: [booking, reschedule, cancel]
+  - question: Do you treat children?
+    answer: Yes, we see children from age three. Our paediatric slots are on weekday afternoons.
+    tags: [children, kids, paediatric, family]
+  - question: What payment methods do you accept?
+    answer: We accept UPI, all major cards and cash. Treatment plans over 10,000 rupees can be split into two payments.
+    tags: [billing, payment, upi, cards, cash]
+  - question: Do you do root canals?
+    answer: Yes. Most root canal treatments take two visits, and we use local anaesthetic so it's comfortable.
+    tags: [treatments, root canal]
+  - question: How long is a first visit?
+    answer: Plan for about 45 minutes. That covers a full check-up, X-rays if needed, and a treatment plan.
+    tags: [booking, first visit, new patient]
