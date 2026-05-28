@@ -20,13 +20,16 @@ export function formatDuration(startedAt: string, endedAt: string | null): strin
   return minutes > 0 ? `${minutes}m ${seconds % 60}s` : `${seconds}s`
 }
 
-const timeFormat = new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short" })
+// Times are shown in the business's time zone, not the server's (Vercel renders in UTC).
+const TIME_ZONE = process.env.NEXT_PUBLIC_TIME_ZONE || "Asia/Kolkata"
+
+const timeFormat = new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeStyle: "short", timeZone: TIME_ZONE })
 
 export function formatTime(iso: string): string {
   return timeFormat.format(new Date(iso))
 }
 
-const clockFormat = new Intl.DateTimeFormat("en-IN", { timeStyle: "short" })
+const clockFormat = new Intl.DateTimeFormat("en-IN", { timeStyle: "short", timeZone: TIME_ZONE })
 
 export function formatClock(iso: string): string {
   return clockFormat.format(new Date(iso))
