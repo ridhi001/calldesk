@@ -1,6 +1,7 @@
 name: Dashboard
 
 on:
+  workflow_dispatch:
   push:
     paths: ["dashboard/**", ".github/workflows/dashboard.yml"]
   pull_request:
